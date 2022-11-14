@@ -1,10 +1,10 @@
 {
-  "name": "Notify!",
-  "description": "A Google Chrome extension!",
-  "version": "1.0",
   "manifest_version": 3,
+  "name": "Bookmark-hub",
+  "description": "Automatically integrate your bookmarks log to GitHub",
+  "version": "1.0.0",
+  "autho" : "SUNGSU_DEV_LEE",
   "icons": {
-    "48": "/assets/icons/48.png",
-    "128": "/assets/icons/128.png"
+    "48": "/assets/icons/48.png"
   }
 }
