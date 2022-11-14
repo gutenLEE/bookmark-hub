@@ -1,0 +1,10 @@
+{
+  "name": "Notify!",
+  "description": "A Google Chrome extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "/assets/icons/48.png",
+    "128": "/assets/icons/128.png"
+  }
+}
