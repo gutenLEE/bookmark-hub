@@ -23,6 +23,7 @@
         "prettier": "^2.2.1"
     },
     "dependencies": {
+        "@octokit/oauth-app": "^4.1.0",
         "octokit": "^2.0.10"
     }
 }
