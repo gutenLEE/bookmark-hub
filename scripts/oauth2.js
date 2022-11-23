@@ -1,11 +1,9 @@
+import { OAuthApp, createNodeMiddleware } from "octokit";
+
 const oAuth2 = {
 
     init() {
         this.KEY = 'bookmark-hub-token';
-        this.ACCESS_TOKEN_URL =
-          'https://github.com/login/oauth/access_token';
-        this.AUTHORIZATION_URL =
-          'https://github.com/login/oauth/authorize';
         this.CLIENT_ID = 'be7364bd92671966625b';
         this.CLIENT_SECRET = '6b5d6da12cd72baac6eb7db78ef74de0231d5cab';
         this.REDIRECT_URL = 'https://github.com/'; 
@@ -14,13 +12,15 @@ const oAuth2 = {
 
     begin() {
         this.init();
-        
-        let url = `${this.AUTHORIZATION_URL}?client_id=${this.CLIENT_ID}&redirect_uri${this.REDIRECT_URL}&scope=`;
 
-        for (let i = 0; i < this.SCOPES.length; i += 1) {
-            url += this.SCOPES[i];
-        }
+        const app = new OAuthApp();
+        const { url } = app.getWebFlowAuthorizationUrl({
+            clientType: "oauth-app",
+            clientId: this.CLIENT_ID,
+            clientSecret: this.CLIENT_ID,
+            defaultScopes: ["repo"],
+        })
+
         console.log(url)
     }
-
 }
