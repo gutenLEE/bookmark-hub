@@ -1,11 +1,13 @@
-import { OAuthApp, createNodeMiddleware } from "octokit";
+
+import { OAuthApp } from "https://www.jsdelivr.com/package/npm/@octokit/oauth-app";
+
 
 const oAuth2 = {
 
     init() {
         this.KEY = 'bookmark-hub-token';
         this.CLIENT_ID = 'be7364bd92671966625b';
-        this.CLIENT_SECRET = '6b5d6da12cd72baac6eb7db78ef74de0231d5cab';
+        this.CLIENT_SECRET = '6b5d6da12cd72bacab';
         this.REDIRECT_URL = 'https://github.com/'; 
         this.SCOPES = ['repo'];
     },
@@ -17,7 +19,7 @@ const oAuth2 = {
         const { url } = app.getWebFlowAuthorizationUrl({
             clientType: "oauth-app",
             clientId: this.CLIENT_ID,
-            clientSecret: this.CLIENT_ID,
+            clientSecret: this.CLIENT_SECRET,
             defaultScopes: ["repo"],
         })
 

@@ -6,7 +6,7 @@
   "author" : "SUNGSU_DEV_LEE",
 
   "action" : {
-    "default_popup" : "popup.html"
+    "default_popup" : "popup/popup.html"
   },
 
   "permissions": [
@@ -17,5 +17,10 @@
 
   "icons": {
     "48": "/assets/icons/48.png"
+  },
+  "content_security_policy": {
+    "sandbox": "sandbox allow-scripts; script-src 'self' https://www.jsdelivr.com/package/npm/@octokit/oauth-app",
+    "script-scr" : "https://www.jsdelivr.com/package/npm/@octokit/oauth-app",
+    "object-src": "self"
   }
 }
