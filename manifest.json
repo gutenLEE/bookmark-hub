@@ -9,18 +9,22 @@
     "default_popup" : "popup/popup.html"
   },
 
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
   "permissions": [
     "storage",
     "activeTab",
-    "scripting"
+    "scripting",
+    "webNavigation"
   ],
 
   "icons": {
     "48": "/assets/icons/48.png"
   },
   "content_security_policy": {
-    "sandbox": "sandbox allow-scripts; script-src 'self' https://www.jsdelivr.com/package/npm/@octokit/oauth-app",
-    "script-scr" : "https://www.jsdelivr.com/package/npm/@octokit/oauth-app",
     "object-src": "self"
   }
 }
