@@ -1,14 +1,6 @@
+function handleMessage(request){
+    const urlOnboarding = chrome.runtime.getURL('welcome/welcome.html');
+    chrome.tabs.create({ url: urlOnboarding, active: true }); // creates new tab
+}
 
-
-async function getAuth() {
-    console.log('getAuth()')
-};
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    try{
-        getAuth();
-    } catch(e) {
-        console.log('error')
-    }
-    return true;
-});
+chrome.runtime.onMessage.addListener(handleMessage);

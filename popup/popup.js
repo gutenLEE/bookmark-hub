@@ -2,6 +2,8 @@
 
 document.querySelector('.btn').addEventListener('click', () =>
     {   
-        oAuth2.begin()
+        chrome.runtime.sendMessage({
+            isSuccess: true
+        });
     }
 );
