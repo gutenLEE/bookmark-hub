@@ -1,9 +1,23 @@
 
+let action = false;
 
-document.querySelector('.btn').addEventListener('click', () =>
+document.querySelector('#authenticate').addEventListener('click', () =>
     {   
-        chrome.runtime.sendMessage({
-            isSuccess: true
-        });
+        oAuth2.begin();
     }
 );
+
+document.querySelector('#welcome_url').setAttribute(
+    'href',
+    chrome.runtime.getURL('welcome.html')
+);
+
+
+chrome.storage.local.get('leethub_token', (data) => {
+    const token = data.leethub_token;
+    if (token === null || token === undefined) {
+      action = true;
+      document.querySelector('#auth_mode').style.display='block'
+    } 
+  });
+  
