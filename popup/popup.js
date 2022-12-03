@@ -19,5 +19,5 @@ chrome.storage.local.get('leethub_token', (data) => {
       action = true;
       document.querySelector('#auth_mode').style.display='block'
     } 
-  });
-  
+});
+

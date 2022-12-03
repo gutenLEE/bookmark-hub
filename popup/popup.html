@@ -3,9 +3,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="./popup.css">
     </head>
+
     <body>
-        <div style="width: 500px; height: 300px;">Hello!!!!!!!
-        <!-- Authentication mode -->
+        <div class="container">
+            <div class="container__inner">
+                <div role="heading" class="header">
+                    <h1 class="title">BookHub</h1>
+                    <p id="caption">Sync your bookmark from chrome to GitHub</p>
+                </div>
+            </div>
+
+            <!-- Authentication mode -->
             <div id="auth_mode" hidden>
                 <p class="onboarding">
                 <br />
@@ -39,9 +47,13 @@
                     Set up Hook
                 </a>
             </div>
-
-            <a id="welcome_url" href="" target="_blank"></div>
         </div>
+        <section class="socials">
+            <a>github</a>
+            <a>linkedin</a>
+            <a>email</a>
+            <a id="welcome_url" href="" target="_blank"></div>
+        </section>
     </body>
     <script type="module" src="./popup.js"></script>
     <script src="../scripts/oauth2.js"></script>
