@@ -24,6 +24,7 @@
     "48": "/assets/icons/48.png"
   },
   "content_security_policy": {
-    "object-src": "self"
+    "object-src": "self",
+    "script-src-elem": "'self' https://www.jsdelivr.com/package/npm/@octokit/oauth-app"
   }
 }

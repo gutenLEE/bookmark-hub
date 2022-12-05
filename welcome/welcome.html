@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <script 
+            src="https://www.jsdelivr.com/package/npm/@octokit/oauth-app"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"
+        ></script>
+    </head>
     <body>
         <div style="width: 500px; height: 500px; color: black;">
             <h1 style="color: aliceblue;">깃 레포지토리 연동하기</h1>
         </div>
-        <div>new</div>
-        <div>기존</div>
+        <div id="new">new</div>
+        <div id="link">기존</div>
+        <button id="hook_mode">Get Started</button>
     </body>
-    <script type="text/javascript" src="welcome.html"></script>
+    <script type="text/javascript" src="welcome.js"></script>
+</html>
