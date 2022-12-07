@@ -1,3 +1,3 @@
 node_modules
 .idea
-# .scripts/oauth2
+.scripts/oauth2

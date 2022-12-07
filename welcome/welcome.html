@@ -2,19 +2,31 @@
 
 <html>
     <head>
-        <script 
-            src="https://www.jsdelivr.com/package/npm/@octokit/oauth-app"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"
-        ></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
-        <div style="width: 500px; height: 500px; color: black;">
-            <h1 style="color: aliceblue;">깃 레포지토리 연동하기</h1>
+        <div style="color: black;">
+            <h1 style="color: rgb(3, 25, 44);">깃 레포지토리 연동하기</h1>
         </div>
-        <div id="new">new</div>
-        <div id="link">기존</div>
-        <button id="hook_mode">Get Started</button>
+        <select id="type">
+            <option value="">Pick an Option</option>
+            <option value="new">
+              Create a new Private Repository
+            </option>
+            <option value="link">
+              Link an Existing Repository
+            </option>
+          </select>
+          <div class="field">
+            <input
+              autocomplete="off"
+              id="name"
+              placeholder="Repository Name"
+              type="text"
+            />
+          </div>
+        <button id="hook_button" disabled="true">Get Started</button>
+        <div id="error"></div>
     </body>
     <script type="text/javascript" src="welcome.js"></script>
 </html>

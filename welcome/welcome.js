@@ -1,15 +1,26 @@
 
 
-
-document.querySelector('hook_mode')
-
-const app = new OAuthApp();
-const { url } = app.getWebFlowAuthorizationUrl({
-    clientType: "oauth-app",
-    clientId: this.CLIENT_ID,
-    clientSecret: this.CLIENT_SECRET,
-    defaultScopes: ["repo"],
+document.querySelector('#type').addEventListener('change', (e) => {
+    const valueSelected = e.target.value;
+    if (valueSelected=='') {
+        document.querySelector('#hook_button').disabled=true;
+    } else {
+        document.querySelector('#hook_button').disabled=false;
+    }
 })
-alert(url)
 
-// https://stackoverflow.com/questions/71819585/chrome-extension-refusing-to-load-external-scripts
+document.querySelector('#hook_button').addEventListener('click', () => {
+    chrome.storage.local.get('leethub_token', (data) => {
+        const token = data.leethub_token;
+        if (token === null || token === undefined) {
+          /* Not authorized yet. */
+          document.querySelector('#error').innerHTML = 
+            'Authorization error - Grant LeetHub access to your GitHub account to continue (launch extension to proceed)'
+        } else {
+          chrome.storage.local.get('leethub_username', (data2) => {
+            const username = data2.leethub_username;
+              linkRepo(token, `${username}/${repositoryName()}`, false);
+          });
+        }
+      });
+})
