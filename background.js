@@ -1,4 +1,5 @@
 function handleMessage(request){
+    alert('background')
     alert(request)
     if (
         request &&

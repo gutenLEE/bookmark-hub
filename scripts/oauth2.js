@@ -29,7 +29,6 @@ const oAuth2 = {
   
       chrome.storage.local.set({ pipe_leethub: true }, () => {
         // opening pipe temporarily
-  
         chrome.tabs.create({ url, active: true }, function () {
           window.close();
           chrome.tabs.getCurrent(function (tab) {

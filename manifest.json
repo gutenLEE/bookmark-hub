@@ -23,6 +23,17 @@
   "icons": {
     "48": "/assets/icons/48.png"
   },
+  "content_scripts" : [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "scripts/authorize.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
   "content_security_policy": {
     "object-src": "self"
   }
