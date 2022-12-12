@@ -32,6 +32,7 @@ const oAuth2 = {
         chrome.tabs.create({ url, active: true }, function () {
           window.close();
           chrome.tabs.getCurrent(function (tab) {
+            alert("tab.id " +tab.id)
             chrome.tabs.remove(tab.id, function () {});
           });
         });

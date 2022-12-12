@@ -15,6 +15,7 @@ document.querySelector('#welcome_url').setAttribute(
 
 chrome.storage.local.get('leethub_token', (data) => {
     const token = data.leethub_token;
+    alert("token " + token)
     if (token === null || token === undefined) {
         action = true;
         document.querySelector('#auth_mode').style.display='block'
